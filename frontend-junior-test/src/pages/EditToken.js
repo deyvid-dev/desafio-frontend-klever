@@ -12,9 +12,9 @@ class EditToken extends Component {
           <button>Voltar</button>
         </Link>
         <p>Token</p>
-        <input></input>
+        <input required type="text" placeholder="Token"></input>
         <p>Balance</p>
-        <input></input>
+        <input required type="number" placeholder="Balance"></input>
         <br></br>
         <button>Remove</button>
         <Link to="/">
