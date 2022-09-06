@@ -1,27 +1,35 @@
-
-function saveToken(tokenData) {
-  localStorage.setItem('tokenList', JSON.stringify([tokenData]));
-  let lista = localStorage.getItem('tokenList')
-  if (lista === null) {
-    localStorage.setItem('tokenList', JSON.stringify([tokenData]));
-    return true;
-  }
-  let listaObjeto = lista;
-  let objeto = JSON.parse(listaObjeto)
-  console.log(objeto[0]);
-  if (objeto[0].Token === tokenData.Token) {
-    alert('Token já existe !')
-  }
-  return localStorage.setItem('tokenList', JSON.stringify([tokenData]));
+function getLocalStorage(key) {
+  const item = localStorage.getItem(key);
+  return JSON.parse(item);
 }
 
+function setLocalStorage(key, value) {
+  localStorage.setItem(key, JSON.stringify(value));
+}
+
+function saveToken(tokenData) {
+  const tokenList = 'tokenList';
+  let result = [];
+  if (getLocalStorage(tokenList)) {
+    result = getLocalStorage(tokenList);
+  }
+  if (verifyToken(tokenData.Token, result)) {
+    return alert("Token já exite !");
+  }
+  result.push(tokenData)
+  setLocalStorage(tokenList, result);
+}
+
+function verifyToken(tokenData, dataBase) {
+  return dataBase.some(e => e.Token === tokenData);
+}
 /* 
 1.validar se exite uma lista de Token
-2.se existir ok
-  2.1 pega o que exite e faz a validação
-  2.2 salva
-3.se não exitir, ele cria 
+2.se não exitir, ele cria 
 [{ objetos }]
+3.se existir ok
+  3.1 pega o que exite e faz a validação
+  3.2 salva
 */
 
 export { saveToken };

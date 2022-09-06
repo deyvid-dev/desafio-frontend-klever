@@ -13,13 +13,13 @@ function AddToken() {
   } = useForm();
 
   function submit(tokenData) {
-    console.log(tokenData);
+    // console.log(tokenData);
     saveToken(tokenData)
     navigate("/")
   }
   return (
     <>
-      <img src={shootingstar} alt="logo" width="30px" />
+      <img src={shootingstar} color="yellow" alt="logo" width="30px" />
       <h3>Wish Wallet</h3>
       <Link to="/">
         <button>Voltar</button>
