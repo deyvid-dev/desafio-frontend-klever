@@ -1,13 +1,18 @@
 
 function saveToken(tokenData) {
+  localStorage.setItem('tokenList', JSON.stringify([tokenData]));
   let lista = localStorage.getItem('tokenList')
   if (lista === null) {
     localStorage.setItem('tokenList', JSON.stringify([tokenData]));
     return true;
   }
-  let listaObjeto = JSON.parse(lista)
-  if (listaObjeto.token)
-  return false;
+  let listaObjeto = lista;
+  let objeto = JSON.parse(listaObjeto)
+  console.log(objeto[0]);
+  if (objeto[0].Token === tokenData.Token) {
+    alert('Token já existe !')
+  }
+  return localStorage.setItem('tokenList', JSON.stringify([tokenData]));
 }
 
 /* 
@@ -18,3 +23,5 @@ function saveToken(tokenData) {
 3.se não exitir, ele cria 
 [{ objetos }]
 */
+
+export { saveToken };

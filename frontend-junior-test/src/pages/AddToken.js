@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import shootingstar from "../shooting-star.svg";
+import { saveToken } from "../helpers/index";
 
 function AddToken() {
   const navigate = useNavigate()
@@ -13,6 +14,7 @@ function AddToken() {
 
   function submit(tokenData) {
     console.log(tokenData);
+    saveToken(tokenData)
     navigate("/")
   }
   return (

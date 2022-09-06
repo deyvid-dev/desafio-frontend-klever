@@ -14,9 +14,9 @@ class Home extends Component {
         </Link>
         <p>Tokens</p>
         <p>Balance</p>
-        <Link to="/addtoken"><button>Edit</button></Link><p>KLV</p><p>10,250.50</p>
-        <Link to="/addtoken"><button>Edit</button></Link><p>DVK</p><p>50,250.71</p>
-        <Link to="/addtoken"><button>Edit</button></Link><p>KFI</p><p>10</p>
+        <Link to="/edittoken"><button>Edit</button></Link><p>KLV</p><p>10,250.50</p>
+        <Link to="/edittoken"><button>Edit</button></Link><p>DVK</p><p>50,250.71</p>
+        <Link to="/edittoken"><button>Edit</button></Link><p>KFI</p><p>10</p>
       </label>
     )
   }
