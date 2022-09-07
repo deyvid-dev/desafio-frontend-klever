@@ -19,21 +19,21 @@ function AddToken() {
   }
   return (
     <>
-      <img src={shootingstar} color="yellow" alt="logo" width="30px" />
-      <h3>Wish Wallet</h3>
+      <img src={shootingstar} alt="logo" width="30px" />
+      <h1>Wish Wallet</h1>
       <Link to="/">
-        <button>Voltar</button>
+        <button type="button" class="btn btn-secondary">Voltar</button>
       </Link>
       <form onSubmit={handleSubmit(submit)}>
-        <p>Token</p>
-        <input {...register("Token", { required: true })} />
+        <h3>Token</h3>
+        <input required class="form-control" {...register("Token",)} />
         {errors.Token && <span>Token obrigatório</span>}
-        <p>Balance</p>
-        <input type="number" {...register("Balance", { required: true })} />
+        <h3>Balance</h3>
+        <input required class="form-control" type="number" {...register("Balance")} />
         {errors.Balance && <span>Balance obrigatório</span>}
         <br></br>
 
-        <button type="submit">Save</button>
+        <button type="submit" class="btn btn-success">Save</button>
         
       </form>
     </>

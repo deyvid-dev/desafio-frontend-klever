@@ -1,3 +1,17 @@
-img {
-  color: yellow;
+p, h1, h3 {
+  color: black;
+  margin: 15px;
+}
+
+.tokens {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+span {
+  color: red;
+}
+.buttons {
+  display: flex;
+  margin: 15px;
 }
