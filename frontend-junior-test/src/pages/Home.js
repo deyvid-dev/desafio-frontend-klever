@@ -1,39 +1,33 @@
-import React, { useState, useEffect } from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import shootingstar from '../shooting-star.svg';
 import '../styles/Home.css'
 
-function Home() {
-    const [token, setToken] = useState([]);
-    useEffect(() => {
-      const items = getLocalStorage('tokenList');
-      if (items) {
-        setToken(items);
-      }
-    }, [])
-
-    function getLocalStorage(key) {
-      const item = localStorage.getItem(key);
-      return JSON.parse(item);
-    }
-  
+class Home extends Component {
+  render() {
     return (
       <label>
           <img src={ shootingstar } alt="logo" width="30px" />
           <h1>Wish Wallet</h1>
            <Link to="/addtoken">
-           <button type="button" className="btn btn-danger">Add Token</button>
+           <button type="button" class="btn btn-danger">Add Token</button>
           </Link>
-        <div className="tokens">
+        <div class="tokens">
           <h3>Tokens</h3>
           <h3>Balance</h3>
         </div>
-        { token.map((e) => { return (<div key={e.Token} className="tokens">
-          <Link to="/edittoken"><button type="button" className="btn btn-light">Edit</button></Link><p>{ e.Token }</p><p>{ e.Balance }</p>
-        </div>)}) }
-        
+        <div class="tokens">
+          <Link to="/edittoken"><button type="button" class="btn btn-light">Edit</button></Link><p>KLV</p><p>10,250.50</p>
+        </div>
+        <div class="tokens">
+          <Link to="/edittoken"><button type="button" class="btn btn-light">Edit</button></Link><p>DVK</p><p>50,250.71</p>
+        </div>
+        <div class="tokens">
+          <Link to="/edittoken"><button type="button" class="btn btn-light">Edit</button></Link><p>KFI</p><p>10,000.00</p>
+        </div>
       </label>
     )
   }
+}
 
 export default Home;
