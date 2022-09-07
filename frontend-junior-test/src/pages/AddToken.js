@@ -22,18 +22,18 @@ function AddToken() {
       <img src={shootingstar} alt="logo" width="30px" />
       <h1>Wish Wallet</h1>
       <Link to="/">
-        <button type="button" class="btn btn-secondary">Voltar</button>
+        <button type="button" className="btn btn-secondary">Voltar</button>
       </Link>
       <form onSubmit={handleSubmit(submit)}>
         <h3>Token</h3>
-        <input required class="form-control" {...register("Token",)} />
+        <input required className="form-control" {...register("Token",)} />
         {errors.Token && <span>Token obrigatório</span>}
         <h3>Balance</h3>
-        <input required class="form-control" type="number" {...register("Balance")} />
+        <input required className="form-control" type="number" {...register("Balance")} />
         {errors.Balance && <span>Balance obrigatório</span>}
         <br></br>
 
-        <button type="submit" class="btn btn-success">Save</button>
+        <button type="submit" className="btn btn-success">Save</button>
         
       </form>
     </>
