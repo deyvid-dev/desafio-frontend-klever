@@ -13,7 +13,6 @@ function AddToken() {
   } = useForm();
 
   function submit(tokenData) {
-    // console.log(tokenData);
     saveToken(tokenData)
     navigate("/")
   }

@@ -28,7 +28,6 @@ function removeToken(tokenData) {
   }
   if (verifyToken(tokenData, result)) {
     if (window.confirm("Gostaria de remover o Token?") === true) {
-      console.log('Deu bom');
       const removeIndex = result.findIndex( item => item.Token === tokenData );
       result.splice( removeIndex, 1 );
       localStorage.setItem('tokenList', JSON.stringify(result));
